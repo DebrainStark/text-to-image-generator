@@ -174,7 +174,7 @@ button {
     width: 100%;
     padding: 40px 20px;
     border-radius: 20px;
-    background-color: rgba(11, 4, 43, 0.2);
+    background-color: rgba(11, 4, 43, 0.14);
     color: #f2f2f2;
     box-shadow: 2px 2px 1px #4625dbda;
 }
@@ -212,6 +212,18 @@ main h2 {
 main p {
     font-size: 1.2em;
 }
+
+df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
 
 /* Footer Styles */
 footer {
