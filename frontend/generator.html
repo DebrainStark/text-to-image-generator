@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Image</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Text to Image Generator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generator.html">Generate Image</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Generate Image from Text</h2>
+            <form id="generate-form">
+                <label for="text-input">Enter text:</label>
+                <input type="text" id="text-input" name="text">
+                <button type="submit">Generate</button>
+            </form>
+            <div id="image-result"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Text to Image Generator. All rights reserved.</p>
+    </footer>
+    <script src="js/generate.js"></script>
+</body>
+</html>
