@@ -106,3 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    var options = {
+        strings: ["Generator", "GENERATOR"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1500,
+        loop: true
+    };
+
+    var typed = new Typed("#typed-output", options);
+});
