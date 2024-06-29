@@ -22,16 +22,26 @@
         <section class="generate-section">
             <h2>Generate Image from Text</h2>
             <form id="generate-form">
-                <label for="text-input">Enter text:</label>
-                <input type="text" id="text-input" name="text">
+                <input type="text" id="text-input" name="text" placeholder="input your text...">
                 <input type="button" value="Generate" id="generate-button">
             </form>
             <div id="image-result"></div>
         </section>
     </main>
+
+    <df-messenger
+  project-id="eastern-polygon-424420-f2"
+  agent-id="ea7cc31f-35a1-44ec-8e01-5eae9226c37e"
+  language-code="en"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+   chat-title="">
+  </df-messenger-chat-bubble>
+</df-messenger>
     <footer>
         <p>&copy; 2024 Text to Image Generator. All rights reserved.</p>
     </footer>
     <script src="js/generate.js"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </body>
 </html>

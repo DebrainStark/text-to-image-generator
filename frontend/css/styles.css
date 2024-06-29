@@ -24,11 +24,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #19028183;
     position: fixed;
     width: 100%;
     padding: 20px 20px;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .logo{
@@ -110,7 +111,7 @@ header h1 {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-button {
+.hero button {
     padding: 0.9em 1.8em;
     text-transform: uppercase;
     text-decoration: none;
@@ -125,7 +126,7 @@ button {
     cursor: pointer;
   }
   
-  button::before {
+  .hero button::before {
     content: "Start Generating";
     position: absolute;
     border-radius: 10px;
@@ -141,13 +142,13 @@ button {
     transition: all 0.5s;
   }
   
-  button:hover::before {
+  .hero button:hover::before {
     left: 100%;
     transform: scale(0) rotateY(360deg);
     opacity: 0;
   }
   
-  button::after {
+  .hero button::after {
     content: "Start Generating";
     position: absolute;
     border-radius: 10px;
@@ -165,7 +166,7 @@ button {
     opacity: 0;
   }
   
-  button:hover::after {
+  .hero button:hover::after {
     left: 0;
     transform: scale(1) rotateY(360deg);
     opacity: 1;
@@ -225,6 +226,245 @@ main h2 {
 
 main p {
     font-size: 1.2em;
+}
+
+.generate-section h2{
+    padding: 30px;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+#generate-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#generate-form #text-input{
+    padding: 10px;
+    width: 600px;
+    border: 1px solid #4625db;
+    color: #060421;
+}
+
+#generate-button{
+    padding: 0 20px;
+}
+
+#generate-form input{
+    height: 40px;
+}
+
+/*About Us Section*/
+.hero1 {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #00ffcc 0%, #ff66cc 100%);
+    color: #1a1a1a;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero1 h2 {
+    margin: 0;
+    font-size: 3.5em;
+}
+
+.hero1 p {
+    font-size: 1.2em;
+}
+
+.story, .founders, .quotes {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.story h2, .founders h2, .quotes h2 {
+    font-size: 3.5em;
+    margin-bottom: 4px;
+}
+
+
+.story .timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    color: #e4e4e4;
+    flex-basis: 30%;
+    padding: 0 70px;
+}
+
+.timeline-item {
+    text-align: center;
+    flex: 1 1 1 400px;
+    max-width: 400px;
+    padding: 60px 20px;
+    border-radius: 20px;
+    background-color: rgba(11, 4, 43, 0.14);
+    color: #f2f2f2;
+    box-shadow: 2px 2px 1px #4625dbda;
+    margin: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #4625db;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4625db;
+}
+
+.timeline-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #4625db;
+}
+
+.timeline-content p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.founders > h2 {
+    font-size: 3.5em;
+}
+
+.founderss{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 200px;
+}
+
+.founder {
+    text-align: center;
+    flex: 1 1 400px;
+    max-width: 400px;
+    padding: 40px 20px;
+    border-radius: 20px;
+    background-color: rgba(11, 4, 43, 0.14);
+    color: #f2f2f2;
+    margin: 20px;
+    transition: transform 0.3s;
+    position: relative;
+    perspective: 1000px;
+}
+
+.founder img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.founder h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #4625db;
+}
+
+.founder p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.founder:hover {
+    transform: scale(1.05);
+}
+
+.founder:hover p {
+    opacity: 1;
+}
+
+.card {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.founder:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    box-shadow: 2px 2px 1px #4625dbda;
+    padding: 40px 20px;
+    background-color: rgba(11, 4, 43, 0.14);
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.card-front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card img {
+    border-radius: 20%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #4625db;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #f2f2f2;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.quotes {
+    background: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.quotes h2 {
+    color: #ff66cc;
+}
+
+.quotes p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 df-messenger {

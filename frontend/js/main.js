@@ -1,115 +1,22 @@
-// main.js
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('JavaScript is ready to go!');
-
-    // Add smooth scroll to all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
-
-    // Generate image gallery items (Placeholder functionality)
-    const generateButton = document.getElementById('generateButton');
-    const imageGallery = document.getElementById('imageGallery');
-
-    generateButton.addEventListener('click', () => {
-        const textInput = document.getElementById('textInput').value;
-        if (textInput) {
-            const img = document.createElement('img');
-            img.src = 'https://via.placeholder.com/200'; // Placeholder image URL
-            img.alt = textInput;
-            imageGallery.appendChild(img);
-        }
-    });
-});
-// main.js
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('JavaScript is ready to go!');
-
-    // Add smooth scroll to all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
-
-    // Generate image gallery items (Placeholder functionality)
-    const generateButton = document.getElementById('generateButton');
-    const imageGallery = document.getElementById('imageGallery');
-
-    generateButton.addEventListener('click', () => {
-        const textInput = document.getElementById('textInput').value;
-        if (textInput) {
-            const img = document.createElement('img');
-            img.src = 'https://via.placeholder.com/200'; // Placeholder image URL
-            img.alt = textInput;
-            imageGallery.appendChild(img);
-        }
-    });
-});
-// main.js
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('JavaScript is ready to go!');
-
-    // Add smooth scroll to all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
-
-    // Generate image gallery items (Placeholder functionality)
-    const generateButton = document.getElementById('generateButton');
-    const imageGallery = document.getElementById('imageGallery');
-
-    generateButton.addEventListener('click', () => {
-        const textInput = document.getElementById('textInput').value;
-        if (textInput) {
-            const img = document.createElement('img');
-            img.src = 'https://via.placeholder.com/200'; // Placeholder image URL
-            img.alt = textInput;
-            imageGallery.appendChild(img);
-        }
-    });
-});
-
-// scripts.js
 document.addEventListener('DOMContentLoaded', function() {
-    var options = {
+    // Typing effect for the introduction text
+    const introText = "Transforming text into stunning visuals with the power of AI.";
+    let index = 0;
+    const typingSpeed = 50;
+    const introTextElement = document.getElementById('intro-text');
+
+    function typeIntroText() {
+        if (index < introText.length) {
+            introTextElement.innerHTML += introText.charAt(index);
+            index++;
+            setTimeout(typeIntroText, typingSpeed);
+        }
+    }
+
+    typeIntroText();
+
+    // Typing effect for the "#typed-output" element using Typed.js
+    const options = {
         strings: ["Generator", "GENERATOR"],
         typeSpeed: 100,
         backSpeed: 100,
@@ -117,5 +24,75 @@ document.addEventListener('DOMContentLoaded', function() {
         loop: true
     };
 
-    var typed = new Typed("#typed-output", options);
+    new Typed("#typed-output", options);
+
+    // Dynamic quotes
+    const quotes = [
+        "This platform is a game-changer for digital content creation!",
+        "Innovative, user-friendly, and incredibly powerful.",
+        "The best tool for turning text into visual masterpieces.",
+        "A must-have for designers and content creators."
+    ];
+
+    let quoteIndex = 0;
+    const quoteElement = document.getElementById('quote');
+
+    function changeQuote() {
+        quoteElement.innerHTML = quotes[quoteIndex];
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+    }
+
+    setInterval(changeQuote, 3000);
+
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    let currentQuoteIndex = 0;
+    const quotes = document.querySelectorAll('.carousel .quote');
+    const totalQuotes = quotes.length;
+
+    function showQuote(index) {
+        quotes.forEach((quote, i) => {
+            quote.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentQuoteIndex = (currentQuoteIndex - 1 + totalQuotes) % totalQuotes;
+        showQuote(currentQuoteIndex);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentQuoteIndex = (currentQuoteIndex + 1) % totalQuotes;
+        showQuote(currentQuoteIndex);
+    });
+
+    showQuote(currentQuoteIndex);
 });
